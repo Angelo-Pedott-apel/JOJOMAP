@@ -10,7 +10,6 @@ public class EpisodeService {
     public static ClosestEpisode findClosestFromCoord(double latitude, double longitude, List<Episode> episodelist){
 
         double minDistance = getDistance(latitude, longitude, episodelist.get(0));
-
         ClosestEpisode closestEp = new ClosestEpisode(episodelist.get(0), minDistance);
 
         for (Episode i : episodelist){

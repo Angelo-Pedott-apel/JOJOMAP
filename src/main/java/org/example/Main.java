@@ -23,8 +23,5 @@ public class Main {
         ClosestEpisode closestEpisode = EpisodeService.findClosestFromCoord(0,0, matchingEpisodes);
 
         System.out.println(closestEpisode.episode.getEpisodeID()+" - " +closestEpisode.episode.getLocation().trim()+ " - " + closestEpisode.distance);
-
-
-
     }
     }
