@@ -5,7 +5,7 @@
              version="3.0">
     <persistence-unit name="JOJOMAP">
 
-        <class>org.example.EpisodeSQL</class>
+        <class>org.example.Episode</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>

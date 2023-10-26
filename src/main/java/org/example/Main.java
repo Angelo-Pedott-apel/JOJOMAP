@@ -2,7 +2,6 @@ package org.example;
 
 import jakarta.persistence.EntityManager;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static jakarta.persistence.Persistence.createEntityManagerFactory;
@@ -17,31 +16,14 @@ public class Main {
 
         EntityManager em = factory.createEntityManager();
 
-        List<EpisodeSQL> matchingEpisodes =
-                em.createQuery("SELECT b from EpisodeSQL b where 1=1", EpisodeSQL.class)
+        List<Episode> matchingEpisodes =
+                em.createQuery("SELECT b from Episode b where 1=1", Episode.class)
                         .getResultList();
 
-        List<Episode> episodeList = new ArrayList<>();
+        ClosestEpisode closestEpisode = EpisodeService.findClosestFromCoord(0,0, matchingEpisodes);
 
-        for (EpisodeSQL matchingEpisode : matchingEpisodes) {
-            int epid = matchingEpisode.getEpisodeID();
-            double lat = matchingEpisode.getLatitude().toBigInteger().doubleValue();
-            double longi = matchingEpisode.getLongitude().toBigInteger().doubleValue();
-            Episode newep = new Episode(String.valueOf(epid), lat, longi);
-            episodeList.add(newep);
-        }
+        System.out.println(closestEpisode.episode.getEpisodeID()+" - " +closestEpisode.episode.getLocation().trim()+ " - " + closestEpisode.distance);
 
-        ClosestEpisode closestEpisode = EpisodeService.findClosestFromCoord(0,0, episodeList);
-
-        System.out.println(closestEpisode.episode.getName()+ "------" + closestEpisode.distance);
-
-        List<EpisodeSQL> closestEpisodeSQL =
-                em.createQuery("SELECT b from EpisodeSQL b where episodeID = ?1", EpisodeSQL.class)
-                        .setParameter(1, closestEpisode.episode.getName())
-                        .getResultList();
-
-        System.out.println(closestEpisodeSQL.get(0).getLocation());
-        System.out.println("batata");
 
 
     }
