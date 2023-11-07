@@ -12,4 +12,5 @@ public class EpisodeRepository {
                 .setParameter("parts", partlist)
                 .getResultList();
     }
+
 }

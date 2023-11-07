@@ -16,7 +16,8 @@ public class EpisodeService {
             double newDistance = getDistance(latitude, longitude, i);
             if (newDistance < minDistance){
                 minDistance = newDistance;
-                closestEp = new ClosestEpisode(i,minDistance);
+                closestEp.episode = i;
+                closestEp.distance = minDistance;
             }
         }
         return  closestEp;

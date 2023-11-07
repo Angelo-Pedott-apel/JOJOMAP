@@ -10,15 +10,27 @@ public class Main {
 
 
     public static void main(String[] args) {
-        List<Integer> partList = new ArrayList<>();
-        partList.add(1);
-        partList.add(2);
-        partList.add(3);
 
-        List<Episode> matchingEpisodes = EpisodeRepository.findMatchingEpisodes(partList);
 
-        ClosestEpisode closestEpisode = EpisodeService.findClosestFromCoord(0,0, matchingEpisodes);
 
-        System.out.println(closestEpisode.episode.getEpisodeID()+" - " +closestEpisode.episode.getLocation().trim()+ " - " + closestEpisode.distance);
-    }
+        List<Integer> lista = new ArrayList<>();
+
+        lista.add(1);
+
+        List<Character> listc = CharacterRepository.CharactersInEpisode(EpisodeService.findClosestFromCoord(0,0,EpisodeRepository.findMatchingEpisodes(lista)).episode);
+
+        for (Character a: listc
+             ) {
+            System.out.println(a.getName() + " "+ "ID nº: " + a.getCharID());
+        }
+
+
+
+        }
+
+
+
+
+
+
     }
