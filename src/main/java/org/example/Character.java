@@ -19,7 +19,6 @@ public class Character {
     @Column(name = "IsAlly")
     private boolean isAlly;
 
-    public Character(Object o){}
     public int getCharID() {
         return charID;
     }

@@ -2,7 +2,6 @@ package org.example;
 
 import jakarta.persistence.EntityManager;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -28,12 +27,5 @@ public class CharacterRepository {
                 .setParameter("epnumber", episode.getEpisodeID())
                 .getResultList();
     }
-
-
-
-//    Select Characters.Name
-//    From Characters
-//    INNER JOIN (SELECT Batata.CharID From EpisChar AS Batata Where Batata.EpisodeID = 126) AS Batata
-//    ON Characters.CharID = Batata.CharID;
 
 }
