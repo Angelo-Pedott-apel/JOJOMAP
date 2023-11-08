@@ -1,7 +1,6 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
+import static spark.Spark.*;
 
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -10,27 +9,15 @@ public class Main {
 
 
     public static void main(String[] args) {
+        staticFiles.location("/public");
 
+        redirect.get("/", "/Jojo_page/Jojo_page external css.html");
 
+        get("/Request", (request, response) -> {
 
-        List<Integer> lista = new ArrayList<>();
-
-        lista.add(1);
-
-        List<Character> listc = CharacterRepository.CharactersInEpisode(EpisodeService.findClosestFromCoord(0,0,EpisodeRepository.findMatchingEpisodes(lista)).episode);
-
-        for (Character a: listc
-             ) {
-            System.out.println(a.getName() + " "+ "ID nº: " + a.getCharID());
-        }
-
-
-
-        }
-
-
-
-
-
-
+        RequestQuery requestQuery1 = new RequestQuery(request);
+        return requestQuery1.responseString();
+        });
+        init();
     }
+}

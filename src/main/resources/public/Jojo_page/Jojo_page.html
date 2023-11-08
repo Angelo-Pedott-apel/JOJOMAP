@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.part_img {
+	position:relative;
+	bottom: 18px;
+	width: 156px;
+	height: 242px;
+	opacity: 0.60;
+	margin:auto;
+	display: block;
+}
+
+.part_check {
+	position:relative;
+	left: 1px;
+	margin: 0px;
+	border: 0px;
+	top: 242px;
+	width: 156px;
+}
+
+.part_label {
+	width: 156px;
+	text-align: center;
+	font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+input.part_check:checked ~ img.part_img {
+	opacity: 1;
+}
+
+div.partblock {
+	display: inline-block;
+	margin: auto;
+	text-align: center;
+	width: 156px;
+	height: 285px;
+}
+
+.part_desc {
+	display: block;
+	position: relative;
+	left: 10px;
+	bottom: 95px;
+	float: left;
+	z-index: 3;
+	width: 0px;
+	height: 1.3em;
+	border-radius: 4px;
+	background-color: rgba(255,255,255,0.85);
+	color:transparent;
+	box-shadow: 0 10px 5px 0 rgba(0,0,0,0.2);
+	transition: all .25s ease-in 2s;
+	overflow: hidden;
+	word-break: break-all;
+	font-family: 'Arial Narrow', Arial, sans-serif;
+	transition: all 0.25s;
+}
+
+.partblock:hover .part_desc {
+	transition: all .25s ease-in 1s;
+	color: black;
+	width:136px;
+}
+@media (max-width:988px) {
+	div.partblock {
+		border: 1px solid #ccc;
+		box-shadow:0 10px 5px 0 rgba(0,0,0,0.2), 0 6px 6px 0 rgba(0,0,0,0.19);
+		margin-top: 4px;
+	}
+}
+
+#background {
+	background-color: rgba(218, 56, 141, 0.4);
+	background-image: linear-gradient(to left, rgba(218, 56, 141, 0.75), rgba(251, 232, 243,1), rgba(218, 56, 141, 0.75));
+}
+</style>
+</head>
+<body id="background">
+
+<p style="text-align:center;"> <img src="Jojo's_mAPY_logo.png" style="width:232px;height:143px;"> </p>
+
+<p style="font-family: 'Arial Narrow', Arial, sans-serif;text-align:center;margin-left:10%;margin-right:10%;"> Hello fellow jojo fans, in this site you can find out wich jojo's bizzare adventure place is the
+ closest to you or a location you want to know. Simply select wich parts of the anime/manga you want to search (at least one), input your location
+ (name of the city or point of reference) or the coordinates (lat long) of your choice and click the button! </p>
+
+<form>
+
+<div style="text-align:center;">
+<div class="partblock">
+	<input type="checkbox" id="Part_1" class="part_check">
+	<img src="Jonathan_scale.png" class="part_img" alt="Jonathan Joestar">
+	<label for="Part_1" class="part_label"> Part 1</label>
+	<br>
+	<p class="part_desc"> Jonathan Joestar </p>
+</div>
+
+<div class="partblock">
+	<input type="checkbox" id="Part_2" class="part_check">
+	<img src="Joseph_scale.png" class="part_img" alt="Joseph Joestar">
+	<label for="Part_2" class="part_label"> Part 2 </label>
+	<br>
+	<p class="part_desc"> Joseph Joestar </p>
+</div>
+
+
+
+<div class="partblock">
+	<input type="checkbox" id="Part_3" class="part_check">
+	<img src="Jotaro_scale.png" class="part_img" alt="Jotaro Kujo">
+	<label for="Part_3" class="part_label"> Part 3 </label>
+	<br>
+	<p class="part_desc"> Jotaro Kujo </p>
+</div>
+
+<div class="partblock">
+	<input type="checkbox" id="Part_4" class="part_check">
+	<img src="Josuke_scale.png" class="part_img" alt="Josuke Higashikata">
+	<label for="Part_4" class="part_label"> Part 4 </label>
+	<br>
+	<p class="part_desc"> Josuke Higashikata </p>
+</div>
+
+<div class="partblock">
+	<input type="checkbox" id="Part_5" class="part_check">
+	<img src="Giorno_scale.png" class="part_img" alt="Giorno Giovanna">
+	<label for="Part_5" class="part_label"> Part 5 </label>
+	<br>
+	<p class="part_desc"> Giorno Giovanna </p>
+</div>
+
+<div class="partblock">
+	<input type="checkbox" id="Part_6" class="part_check">
+	<img src="Jolyne_scale.png" class="part_img" alt="Jolyne Kujo">
+	<label for="Part_6" class="part_label"> Part 6 </label>
+	<br>
+	<p class="part_desc"> Jolyne Kujo </p>
+</div>
+
+</div>
+
+<br>
+
+<div style="text-align:center;">
+<label for="location" style="font-family: 'Arial Narrow', Arial, sans-serif;cursor:text;"> Location or coordinates <abbr title="Required to submit" arial-label="required" style="cursor:help;">*</abbr>  :</label>
+<input type="text" id="location" placeholder="Rome italy/ 41.8, 12.4" style="font-family: 'Arial Narrow', Arial, sans-serif;width:312px;text-align:center;">
+<br>
+<br>
+<input type="submit" value="Search" style="font-family: 'Arial Narrow', Arial, sans-serif;" required>
+</div>
+
+</form>
+
+
+</body>
+</html>
