@@ -9,15 +9,8 @@ public class Main {
 
 
     public static void main(String[] args) {
-        staticFiles.location("/public");
 
-        redirect.get("/", "/Jojo_page/Jojo_page external css.html");
+        get("/Request", (request, response) -> new RequestQuery(request).responseJSON());
 
-        get("/Request", (request, response) -> {
-
-        RequestQuery requestQuery1 = new RequestQuery(request);
-        return requestQuery1.responseString();
-        });
-        init();
     }
 }
