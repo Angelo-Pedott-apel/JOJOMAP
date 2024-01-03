@@ -34,8 +34,6 @@ public class RequestQuery {
     public String responseJSON() {
 
         List<Episode> episodeList = EpisodeRepository.findMatchingEpisodes(this.part);
-        System.out.println(this.longitude);
-        System.out.println(this.latitude);
         ClosestEpisode closestEpisode = EpisodeService.findClosestFromCoord(this.latitude, this.longitude, episodeList);
         ResponseDTO responseDTO= new ResponseDTO(closestEpisode.episode.getName().trim(),
                 closestEpisode.episode.getLocation().trim(),
