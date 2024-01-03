@@ -10,4 +10,5 @@ public class ClosestEpisode {
         this.episode = episode;
         this.distance = distance;
     }
+
 }

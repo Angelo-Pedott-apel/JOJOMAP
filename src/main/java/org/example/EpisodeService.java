@@ -10,14 +10,14 @@ public class EpisodeService {
     public static ClosestEpisode findClosestFromCoord(double latitude, double longitude, List<Episode> episodelist){
 
         double minDistance = getDistance(latitude, longitude, episodelist.get(0));
-
         ClosestEpisode closestEp = new ClosestEpisode(episodelist.get(0), minDistance);
 
         for (Episode i : episodelist){
             double newDistance = getDistance(latitude, longitude, i);
             if (newDistance < minDistance){
                 minDistance = newDistance;
-                closestEp = new ClosestEpisode(i,minDistance);
+                closestEp.episode = i;
+                closestEp.distance = minDistance;
             }
         }
         return  closestEp;
